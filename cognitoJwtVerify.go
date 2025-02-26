@@ -2,7 +2,8 @@ package cognitoJwtVerify
 
 import (
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/logstraining/cognito-jwt-verify-go/utils"
+	"github.com/jhosan7/cognito-jwt-verify/utils"
+	"strings"
 )
 
 type CognitoJwtVerifier struct {
@@ -33,6 +34,10 @@ func Create(config Config) (CognitoJwtVerifier, error) {
 }
 
 func (c CognitoJwtVerifier) Verify(token string) (jwt.Claims, error) {
+	if token != "" {
+		// Remove "Bearer " prefix
+		token = strings.Replace(token, "Bearer ", "", 1)
+	}
 	decomposeUnverifiedJwt, err := utils.DecomposeUnverifiedJwt(token)
 	if err != nil {
 		return nil, err

@@ -1,4 +1,4 @@
-module github.com/logstraining/cognito-jwt-verify-go
+module "github.com/jhosan7/cognito-jwt-verify"
 
 go 1.21
 
