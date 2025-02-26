@@ -2,7 +2,7 @@ package cognitoJwtVerify
 
 import (
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/jhosan7/cognito-jwt-verify/utils"
+	"github.com/logstraining/cognito-jwt-verify-go/utils"
 )
 
 type CognitoJwtVerifier struct {
